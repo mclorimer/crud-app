@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Create an Event!</title>
+	</head>
+	<div style="margin-left: 40%; margin-top: 5%">
+		<body>
+		<p><a href="/events/index">Back to homepage</a></p>
+			<form method="post">
+	    		{% csrf_token %}
+	    		{{ form.as_p }}
+	    		<button type="submit">Create Event</button>
+	    	</form>
+		</body>
+	</div>
+</html>

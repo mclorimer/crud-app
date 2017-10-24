@@ -1,0 +1,15 @@
+<a href="/events/index/">Back to homepage</a>
+<div style="margin-left: 40%; margin-top: 5%">
+	<h1>{{event.title}}</h1>
+	<h2>by: {{event.creator}}</h2>
+	<h3>at: {{event.location}}</h3>
+	<p>created at: {{event.created_at}} </p>
+	<p>{{event.content}}</p>
+	<h1>Who's all going?:</h1>
+	{% for attendee in attendees %}
+		<p>{{ attendee.attendee }}</p>
+	{% endfor %}
+	<p><a href="/events/{{event.id}}/attend/">Attend Event</a></p>
+	<p><a href="/events/{{event.id}}/edit/">Edit Event</a></p>
+	<p><a href="/events/{{event.id}}/delete/">Delete Event</a></p>
+</div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Lori's Event Website</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<a href="/events/index">Back to all events</a>
+		<div class="container">
+			<div class="row">
+			<h1>Events {{user.username}} has created:</h1>
+			{% for event in events %}
+				<div class="col-sm-3 col-md-3 col-lg-3">
+					<h1><a href="/events/{{event.id}}/details">{{ event.title }}</a></h1>
+					<h4>by {{event.creator }}</h4>
+					<p>{{ event.content }}</p>
+					<p>created at: {{ event.created_at }}</p>
+					<p><a href="/events/{{event.id}}/delete/">Delete Event</a></p>
+					<p><a href="/events/{{event.id}}/edit/">Edit Event</a></p>
+				</div>
+			{% endfor %}
+			</div>
+			<div class="row">
+				<h1>Events {{user.username}} is attending:</h1>
+				{% for event in events_attending %}
+					<div class="col-sm-3 col-md-3 col-lg-3">
+						<h4><a href='/events/{{event.event.id}}/details/'>{{ event }}</a></h4>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</body>
+</html>

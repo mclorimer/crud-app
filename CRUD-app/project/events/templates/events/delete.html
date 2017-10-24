@@ -1,0 +1,10 @@
+<div style="margin-left: 40%; margin-top: 5%">
+	<h1>Really delete {{event.title}} by {{event.creator}}?</h1>
+
+	<form method="POST">
+		{% csrf_token %}
+		<input type="submit" name="Delete">
+	</form>
+
+	<a href="/events/index/">No! Go back!</a>
+</div>

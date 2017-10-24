@@ -1,0 +1,18 @@
+<div style="margin-left: 40%; margin-top: 5%">
+	{% block title %}
+	    Update Event
+	{% endblock title %}
+
+	{% block header %}
+	    <h1>Update Event info</h1>
+	{% endblock header %}
+
+
+	{% block main %}
+	    <form action="{% url 'events:edit' event_id=form.instance.id %}" method="POST">
+	    	{{ form.as_p }}
+	    	{% csrf_token %}
+	    	<input type="submit" value="Update">
+	    </form>
+	{% endblock main %}
+</div>
